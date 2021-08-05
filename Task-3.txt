@@ -1,0 +1,123 @@
+
+
+Task3
+
+no1. tidak adanya else , karena jika credit / debitnya 0  dia tidak akan menjalankan apa-apa
+
+
+no 2
+ <?php
+  
+$city=array("Bandung"=>"Jawa Barat","Semarang"=>"Jawa Tengah","Cirebon"=>"Jawa Barat");
+$result=array();
+
+foreach($city as $x=>$x_value)
+  {
+    if (empty($result)) {
+      $result[$x_value]=array();
+    } else {
+      foreach($result as $r=>$r_val) {
+      	if ($r != $x_value) {
+          $result[$x_value]=array();
+      	}
+      }
+    }
+  }
+
+foreach($city as $x=>$x_val) {
+  foreach($result as $r=>$r_val) {
+  	if ($r == $x_val) {
+  	  array_push($result[$x_val],$x);
+  	}
+  }
+}
+
+print_r($result);
+?>
+ 
+
+
+
+
+
+ no 3
+<?php
+ $array  = [1,[10,4,[50,25],3],12,[3,21,8]];
+ $rec = new RecursiveIteratorIterator(new RecursiveArrayIterator($array));
+  foreach($rec as $data) {
+     $new_arr[] = $data;
+ }
+ var_dump(array_sum($new_arr));
+?>
+no4
+<?php
+    function nomor_empat()
+    {
+   $n = fwrite(STDOUT,"Masukan Jumlah loop = ");
+   $n= trim(fgets(STDIN));
+
+    for ($i=0;$i<$n;$i++)
+   {
+       $arr[$i]=  trim(fgets(STDIN));
+   }
+   rsort($arr);
+   return $arr;
+  }
+ print_r(nomor_empat());
+
+?>
+ no 6
+
+<?php
+  trait ApaKabar
+  {
+      public function apaKabar() {
+         return "Apa kabar?";
+      }
+  }
+
+   class Pesan
+   {
+    
+    use ApaKabar;
+  }
+
+   $obj = new Pesan();
+   echo $obj->apaKabar();
+?>
+
+ no 8
+  Composer adalah package-manager (di level aplikasi) untuk bahasa pemrogaman PHP. Menawarkan standarisasi cara pengelolaan libraries dan software dependencies dalam projek PHP [1]. Composer memungkinkan kita mendefiniskan pustaka atau library apa saja yang projek kita butuhkan, untuk kemudian Composer lah yang akan menangani proses instalasi dan penyiapan pustaka-pustaka tersebut untuk kita gunakan,
+   saya menggunakan composer untuk menggunakan library ketika saya membutuhkanya , biasanya saya gunakan di di laravel dan codeigniter 
+
+ no 9
+PSR atau kepanjangan dari php standard recomendation adalah sebuahÂ  spesifikasi yang dihasilkan dari PHP-FIG melalui workflow yang cukup panjang: Pre-Draft, Entrance Vote, Draft, Review, Accepted.
+Pe nulisan PHP adalah seprti ini <?php   ?> a
+FIle harus hanya menggunakan UTF-8 dan tanpa BOM pada PHP code
+lass Constants, Properties, Dan Methods Berikut adalah aturan dalam penggunaan class constants, properties, dan method:
+Constants
+Class Constants harus ditulis menggunakan huruf besar sebagai contoh terdapat konstanta dengan nama host.
+const HOST = “localhost”;
+Properties
+Dalam menulis property dapat menulis dengan beberapa format seperti berikut: StudlyCaps, camelCase, dan under_score.
+$TanggalLahir = "";
+$tanggalLahir = "";
+$tanggal_lahir = "";
+Hanya saja untuk penggunaannya dalam projek yang sedang dibuat harus konsisten memilih salah satu format penulisan.
+Methods
+Dalam penulisan method digunakan format penulisan camelCase
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
